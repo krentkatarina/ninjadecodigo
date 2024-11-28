@@ -1,0 +1,133 @@
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: #000;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thanks__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.thanks__title {
+    font-size: 56px;
+    line-height: 66px;
+}
+.line {
+    position: absolute;
+    background-color: #000;
+    z-index: 2;
+    transition: all 0.6s ease;
+}
+.line--top {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    animation: lineTop 0.6s ease forwards;
+    animation-delay: 0.1s;
+}
+.line--right {
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 5px;
+    animation: lineRight 0.6s ease forwards;
+    animation-delay: 0.7s;
+}
+.line--bottom {
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 5px;
+    animation: lineBottom 0.6s ease forwards;
+    animation-delay: 1.3s;
+}
+.line--left {
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 5px;
+    animation: lineLeft 0.6s ease forwards;
+    animation-delay: 1.9s;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+    transform: translateX(0);
+    animation: maskMove 1s ease forwards;
+    animation-delay: 2.5s;
+}
+.text {
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: 3.5s;
+}
+.text-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thanks__button {
+    margin: 20px 0 0 0;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: block;
+    color: white;
+    max-width: 400px;
+    transition: all 0.6s ease;
+}
+.thanks__button:hover {
+    background-color: #fff;
+    color: #000;
+}
+@keyframes lineTop {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes lineRight {
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes lineBottom {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes lineLeft {
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes maskMove {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
